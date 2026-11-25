@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup web app data and Nginx config to GCS
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/default/web-backup
+ExecStart=/usr/local/bin/web-backup.sh

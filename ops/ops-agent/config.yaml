@@ -1,0 +1,14 @@
+logging:
+  receivers:
+    nginx_access:
+      type: nginx_access
+      include_paths:
+        - /var/log/nginx/access.log
+    nginx_error:
+      type: nginx_error
+      include_paths:
+        - /var/log/nginx/error.log
+  service:
+    pipelines:
+      nginx_pipeline:
+        receivers: [nginx_access, nginx_error]

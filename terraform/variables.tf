@@ -20,3 +20,7 @@ variable "machine_type" {
   type        = string
   default     = "e2-micro"
 }
+variable "alert_email" {
+  description = "Email address for Cloud Monitoring alert notifications"
+  type        = string
+}
